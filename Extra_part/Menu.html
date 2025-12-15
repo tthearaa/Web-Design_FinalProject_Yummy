@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Menu</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Modak&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .font-modak { font-family: 'Modak', cursive; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between font-poppins">
+  <div id="main-header-nav-bar" class="relative h-45 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover transition-transform duration-300">
+    <section class="h-1/2 flex ustify-between items-center px-4 flex-row justify-between gap-20 mt-3">
+        <div id="logo-side" class="w-2/6 flex justify-center items-center">
+            <div class="text-6xl h-full font-modak flex items-end text-[#A6171B]">
+                YUMMY
+            </div>
+        </div>
+        <div id="nav-side" class="flex flex-row justify-center align-middle w-4/6 gap-10 [-webkit-text-stroke:2px_#A6171B]">
+            <div id="nav-bar" class=" flex flex-row justify-center font-modak text-3xl gap-10">
+                <div class="flex items-center text-white m-2 ">
+                    Home
+                </div>
+                <div class="flex items-center text-white m-2 ">
+                    <a href="Menu.html">Menu</a>
+                </div>
+                <div class="flex items-center text-white m-2 ">
+                    Merchandise
+                </div>
+                <div class="flex items-center text-white m-2 ">
+                    About Us
+                </div>
+            </div>
+            <div id="shopping-items-counter" class="bg-[#A6171B] flex flex-row justify-center text-2xl items-center gap-2 w-17 h-12 rounded-2xl text-white font-semibold">
+              0 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg>
+            </div>
+        </div>    
+    </section>
+  </div>
+
+  <section id="menu-body" class=" flex flex-col h-[85%] mr-[50px] ml-[50px]">
+    <div id="menu-option-container" class=" p-5 flex flex-row justify-between items-center">
+      <div id="name" class=" text-8xl font-modak text-[#A6171B] w-1/3 flex justify-center items-center">
+        Menu
+      </div>
+      <div id="option-container" class="font-poppins bg-[#D9D9D9] flex flex-row justify-between items-center w-2/3 h-1/2 rounded-full text-white font-semibold">
+        <button class="flex-1 text-center px-2 bg-[#A6171B] h-[50px] flex items-center justify-center rounded-full cursor-pointer" id="menu"><a href="Menu.html">Popular</a></button>
+        <button class="flex-1 text-center px-2 h-[50px] flex items-center justify-center cursor-pointer hover:bg-[#A6171B] hover:rounded-full" id="hot"><a href="Hot_Menu.html">Hot</a></button>
+        <button class="flex-1 text-center px-2 h-[50px] flex items-center justify-center cursor-pointer hover:bg-[#A6171B] hover:rounded-full" id="ice"><a href="Ice_Menu.html">Ice</a></button>
+        <button class="flex-1 text-center px-2 h-[50px] flex items-center justify-center cursor-pointer hover:bg-[#A6171B] hover:rounded-full" id="frappe"><a href="Frappe_Menu.html">Frappe</a></button>
+        <button class="flex-1 text-center px-2 h-[50px] flex items-center justify-center cursor-pointer hover:bg-[#A6171B] hover:rounded-full" id="fresh"><a href="Fresh_Menu.html">Fresh</a></button>
+        <button class="flex-1 text-center px-2 h-[50px] flex items-center justify-center cursor-pointer hover:bg-[#A6171B] hover:rounded-full" id="match"><a href="Matcha_Menu.html">Matcha</a></button>
+        <button class="flex-1 text-center px-2 h-[50px] flex items-center justify-center cursor-pointer hover:bg-[#A6171B] hover:rounded-full" id="bakery"><a href="Bakery_Menu.html">Bakery</a></button>
+      </div>
+    </div>
+   
+    <div id="items" class="grid grid-cols-4 gap-4 mb-5">
+
+      <div id="items-container" class="flex flex-col bg-[#A6171B] rounded-lg overflow-hidden">
+        <section class="flex-1">
+          <div id="items-pic" class="h-75 m-4">
+            <img src="img/coffee latte cup.jpg" alt="Milk Tea" class="w-full h-full object-cover">
+          </div>
+          <div id="items-text" class="p-4 text-white font-semibold text-lg">
+            Milk Tea
+          </div>
+        </section>
+        
+        <section id="item-price-container" class="flex justify-between items-center p-4 bg-[#8a1417]">
+          <div id="price" class="text-white font-bold text-xl">
+            2.5$
+          </div>
+          <div id="add-item-icon" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#A6171B] text-2xl font-bold cursor-pointer hover:bg-gray-200 transition-colors">
+            +
+          </div>
+        </section>
+      </div>
+
+      <!-- Repeat for other items - Example Item 2 -->
+      <div id="items-container" class="flex flex-col bg-[#A6171B] rounded-lg overflow-hidden">
+        <section class="flex-1">
+          <div id="items-pic" class="h-48">
+            <img src="header-shape.png" alt="Coffee" class="w-full h-full object-cover">
+          </div>
+          <div id="items-text" class="p-4 text-white font-semibold text-lg">
+            Coffee
+          </div>
+        </section>
+        
+        <section id="item-price-container" class="flex justify-between items-center p-4 bg-[#8a1417]">
+          <div id="price" class="text-white font-bold text-xl">
+            3.0$
+          </div>
+          <div id="add-item-icon" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#A6171B] text-2xl font-bold cursor-pointer hover:bg-gray-200 transition-colors">
+            +
+          </div>
+        </section>
+      </div>
+
+      <!-- Item 3 -->
+      <div id="items-container" class="flex flex-col bg-[#A6171B] rounded-lg overflow-hidden">
+        <section class="flex-1">
+          <div id="items-pic" class="h-48">
+            <img src="header-shape.png" alt="Latte" class="w-full h-full object-cover">
+          </div>
+          <div id="items-text" class="p-4 text-white font-semibold text-lg">
+            Latte
+          </div>
+        </section>
+        
+        <section id="item-price-container" class="flex justify-between items-center p-4 bg-[#8a1417]">
+          <div id="price" class="text-white font-bold text-xl">
+            3.5$
+          </div>
+          <div id="add-item-icon" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#A6171B] text-2xl font-bold cursor-pointer hover:bg-gray-200 transition-colors">
+            +
+          </div>
+        </section>
+      </div>
+
+      <!-- Item 4 -->
+      <div id="items-container" class="flex flex-col bg-[#A6171B] rounded-lg overflow-hidden">
+        <section class="flex-1">
+          <div id="items-pic" class="h-48">
+            <img src="header-shape.png" alt="Cappuccino" class="w-full h-full object-cover">
+          </div>
+          <div id="items-text" class="p-4 text-white font-semibold text-lg">
+            Cappuccino
+          </div>
+        </section>
+        
+        <section id="item-price-container" class="flex justify-between items-center p-4 bg-[#8a1417]">
+          <div id="price" class="text-white font-bold text-xl">
+            4.0$
+          </div>
+          <div id="add-item-icon" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#A6171B] text-2xl font-bold cursor-pointer hover:bg-gray-200 transition-colors">
+            +
+          </div>
+        </section>
+      </div>
+
+  </section>
+
+
+  <!-- Footer -->
+  <section id="footer" class="bg-[#A6171B] flex w-full p-4 justify-between">
+    <div class="text-white text-6xl w-2/6 font-modak flex items-center justify-center">
+      YUMMY
+    </div>
+
+    <div class="w-3/6 flex text-white gap-15 item-center justify-end">
+      <div class="flex flex-col">
+        <span>HOME</span>
+        <span>ABOUT US</span>
+      </div>
+      <div class="flex flex-col">
+        <span>NEWS</span>
+        <span>STORE</span>
+      </div>
+      <div class="flex flex-col">
+        <span>CONTACT</span>
+        <span><a href="Menu.html">MENU</a></span>
+      </div>
+    </div>
+
+    <div class="w-2/6 flex justify-end items-end text-white">
+      ©2025 YUMMY
+    </div>
+  </section>
+
+</body>
+
+<script>
+  let lastScrollY = window.scrollY;
+  const navbar = document.getElementById("main-header-nav-bar");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > lastScrollY) {
+      // scrolling down → hide
+      navbar.classList.add("-translate-y-full");
+    } else {
+      // scrolling up → show
+      navbar.classList.remove("-translate-y-full");
+    }
+    lastScrollY = window.scrollY;
+  });
+</script>
+
+</html>

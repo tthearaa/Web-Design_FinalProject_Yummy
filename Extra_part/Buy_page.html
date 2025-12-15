@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Details - YUMMY</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Modak&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .font-modak { font-family: 'Modak', cursive; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between font-poppins">
+  <!-- Header (same as your other pages) -->
+  <div id="main-header-nav-bar" class="relative h-45 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover">
+    <section class="h-1/2 flex ustify-between items-center px-4 flex-row justify-between gap-20 mt-3">
+        <div id="logo-side" class="w-2/6 flex justify-center items-center">
+            <div class="text-6xl h-full font-modak flex items-end text-[#A6171B]">
+                YUMMY
+            </div>
+        </div>
+        <div id="nav-side" class="flex flex-row justify-center align-middle w-4/6 gap-10 [-webkit-text-stroke:2px_#A6171B]">
+            <div id="nav-bar" class=" flex flex-row justify-center font-modak text-3xl gap-10">
+                <div class="flex items-center text-white m-2 ">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="flex items-center text-white m-2 ">
+                    <a href="Menu.html">Menu</a>
+                </div>
+                <div class="flex items-center text-white m-2 ">
+                    Merchandise
+                </div>
+                <div class="flex items-center text-white m-2 ">
+                    About Us
+                </div>
+            </div>
+            <div id="shopping-items-counter" class="bg-[#A6171B] flex flex-row justify-center text-2xl items-center gap-2 w-17 h-12 rounded-2xl text-white font-semibold">
+              0 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg>
+            </div>
+        </div>    
+    </section>
+  </div>
+
+  <!-- Main Content - Single Template for ALL Items -->
+  <section id="item-detail" class="flex flex-col h-[85%] mr-[50px] ml-[50px]">
+    <div class="flex flex-row gap-10 p-8">
+      <!-- Left Side: Item Image -->
+      <div class="w-1/2">
+        <div class="bg-[#A6171B] rounded-3xl overflow-hidden h-[500px] flex items-center justify-center">
+          <img id="item-main-image" class="w-full h-full object-cover" src="" alt="Item Image">
+        </div>
+        <div class="flex justify-center mt-4 gap-4">
+          <!-- You can add thumbnail images here if needed -->
+        </div>
+      </div>
+
+      <!-- Right Side: Item Details and Options -->
+      <div class="w-1/2 flex flex-col">
+        <!-- Item Name -->
+        <h1 id="item-name" class="text-6xl font-modak text-[#A6171B] mb-4"></h1>
+        
+        <!-- Item Price -->
+        <div id="item-price" class="text-4xl font-bold text-[#A6171B] mb-6"></div>
+        
+        <!-- Item Description -->
+        <p id="item-description" class="text-gray-600 mb-8 text-lg"></p>
+
+        <!-- Size Selection -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-[#A6171B] mb-4">Select Size</h3>
+          <div class="flex gap-4">
+            <button class="size-option border-2 border-[#A6171B] rounded-full px-8 py-3 text-lg hover:bg-[#A6171B] hover:text-white transition-colors" data-size="small" data-price-add="0">
+              Small
+            </button>
+            <button class="size-option border-2 border-[#A6171B] rounded-full px-8 py-3 text-lg hover:bg-[#A6171B] hover:text-white transition-colors" data-size="medium" data-price-add="0.5">
+              Medium (+$0.50)
+            </button>
+            <button class="size-option border-2 border-[#A6171B] rounded-full px-8 py-3 text-lg hover:bg-[#A6171B] hover:text-white transition-colors" data-size="large" data-price-add="1.0">
+              Large (+$1.00)
+            </button>
+          </div>
+        </div>
+
+        <!-- Location Selection -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-[#A6171B] mb-4">Select Location</h3>
+          <div class="flex gap-4">
+            <button class="location-option border-2 border-[#A6171B] rounded-full px-6 py-3 text-lg hover:bg-[#A6171B] hover:text-white transition-colors" data-location="dine-in">
+              Dine In
+            </button>
+            <button class="location-option border-2 border-[#A6171B] rounded-full px-6 py-3 text-lg hover:bg-[#A6171B] hover:text-white transition-colors" data-location="takeaway">
+              Takeaway
+            </button>
+            <button class="location-option border-2 border-[#A6171B] rounded-full px-6 py-3 text-lg hover:bg-[#A6171B] hover:text-white transition-colors" data-location="delivery">
+              Delivery
+            </button>
+          </div>
+        </div>
+
+        <!-- Quantity Selection -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-[#A6171B] mb-4">Quantity</h3>
+          <div class="flex items-center gap-4">
+            <button id="decrease-quantity" class="w-12 h-12 rounded-full bg-[#A6171B] text-white text-2xl flex items-center justify-center">-</button>
+            <span id="quantity-display" class="text-3xl font-bold w-16 text-center">1</span>
+            <button id="increase-quantity" class="w-12 h-12 rounded-full bg-[#A6171B] text-white text-2xl flex items-center justify-center">+</button>
+          </div>
+        </div>
+
+        <!-- Total Price -->
+        <div class="mb-8 p-4 bg-gray-100 rounded-2xl">
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-bold">Total:</span>
+            <span id="total-price" class="text-3xl font-bold text-[#A6171B]"></span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex gap-4">
+          <button id="add-to-cart-btn" class="flex-1 bg-[#A6171B] text-white text-2xl font-bold py-4 rounded-full hover:bg-[#8a1417] transition-colors">
+            Add to Cart
+          </button>
+          <button id="buy-now-btn" class="flex-1 bg-white border-2 border-[#A6171B] text-[#A6171B] text-2xl font-bold py-4 rounded-full hover:bg-[#A6171B] hover:text-white transition-colors">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section id="footer" class="bg-[#A6171B] flex w-full p-4 justify-between">
+    <div class="text-white text-6xl w-2/6 font-modak flex items-center justify-center">
+      YUMMY
+    </div>
+
+    <div class="w-3/6 flex text-white gap-15 item-center justify-end">
+      <div class="flex flex-col">
+        <span>HOME</span>
+        <span>ABOUT US</span>
+      </div>
+      <div class="flex flex-col">
+        <span>NEWS</span>
+        <span>STORE</span>
+      </div>
+      <div class="flex flex-col">
+        <span>CONTACT</span>
+        <span><a href="Menu.html">MENU</a></span>
+      </div>
+    </div>
+
+    <div class="w-2/6 flex justify-end items-end text-white">
+      ©2025 YUMMY
+    </div>
+  </section>
+
+  <script>
+    // This would be your database of items
+    const itemsDatabase = {
+      // Hot Items
+      "espresso": {
+        id: "espresso",
+        name: "Espresso",
+        basePrice: 2.5,
+        image: "img/Hot/Espresso Coffee Recipe.jpg",
+        description: "Strong and rich espresso shot made from premium Arabica beans.",
+        category: "hot"
+      },
+      "hot-latte": {
+        id: "hot-latte",
+        name: "Hot Latte",
+        basePrice: 3.0,
+        image: "Img/coffee latte cup.jpg",
+        description: "Smooth latte with steamed milk and a delicate foam top.",
+        category: "hot"
+      },
+      "hot-caramel-latte": {
+        id: "hot-caramel-latte",
+        name: "Hot Caramel Latte",
+        basePrice: 3.5,
+        image: "Img/Hot/hot latte.jpg",
+        description: "Latte infused with rich caramel syrup and topped with whipped cream.",
+        category: "hot"
+      },
+      "hot-mocha": {
+        id: "hot-mocha",
+        name: "Hot Mocha",
+        basePrice: 4.0,
+        image: "Img/Hot/Mocha recipe.jpg",
+        description: "Delicious combination of chocolate and coffee, topped with cocoa powder.",
+        category: "hot"
+      },
+      "milk-tea": {
+        id: "milk-tea",
+        name: "Milk Tea",
+        basePrice: 2.5,
+        image: "img/coffee latte cup.jpg",
+        description: "Classic milk tea with boba pearls, perfectly sweetened.",
+        category: "popular"
+      },
+      "iced-coffee": {
+        id: "iced-coffee",
+        name: "Iced Coffee",
+        basePrice: 3.0,
+        image: "img/Ice/iced-coffee.jpg",
+        description: "Chilled coffee served over ice, perfect for hot days.",
+        category: "ice"
+      },
+      "matcha-latte": {
+        id: "matcha-latte",
+        name: "Matcha Latte",
+        basePrice: 4.2,
+        image: "img/Matcha/matcha-latte.jpg",
+        description: "Traditional Japanese matcha with steamed milk.",
+        category: "matcha"
+      },
+      "croissant": {
+        id: "croissant",
+        name: "Butter Croissant",
+        basePrice: 2.8,
+        image: "img/Bakery/croissant.jpg",
+        description: "Freshly baked butter croissant, flaky and delicious.",
+        category: "bakery"
+      }
+      // Add more items as needed...
+    };
+
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemId = urlParams.get('item') || 'milk-tea'; // Default to milk tea
+
+    // Get the item from database
+    const currentItem = itemsDatabase[itemId] || itemsDatabase['milk-tea'];
+
+    // DOM Elements
+    const itemName = document.getElementById('item-name');
+    const itemPrice = document.getElementById('item-price');
+    const itemDescription = document.getElementById('item-description');
+    const itemImage = document.getElementById('item-main-image');
+    const totalPriceDisplay = document.getElementById('total-price');
+    const quantityDisplay = document.getElementById('quantity-display');
+    const sizeButtons = document.querySelectorAll('.size-option');
+    const locationButtons = document.querySelectorAll('.location-option');
+    const increaseBtn = document.getElementById('increase-quantity');
+    const decreaseBtn = document.getElementById('decrease-quantity');
+    const addToCartBtn = document.getElementById('add-to-cart-btn');
+    const buyNowBtn = document.getElementById('buy-now-btn');
+    const cartCounter = document.getElementById('shopping-items-counter');
+
+    // State
+    let selectedSize = 'medium';
+    let selectedLocation = 'dine-in';
+    let quantity = 1;
+    let sizePriceAddition = 0.5; // Medium default
+
+    // Initialize page with item data
+    function initializePage() {
+      // Set item details
+      itemName.textContent = currentItem.name;
+      itemPrice.textContent = `$${currentItem.basePrice.toFixed(2)}`;
+      itemDescription.textContent = currentItem.description;
+      itemImage.src = currentItem.image;
+      itemImage.alt = currentItem.name;
+      
+      // Update page title
+      document.title = `${currentItem.name} - YUMMY`;
+      
+      // Set default selections
+      sizeButtons[1].classList.add('bg-[#A6171B]', 'text-white'); // Select Medium by default
+      locationButtons[0].classList.add('bg-[#A6171B]', 'text-white'); // Select Dine-in by default
+      
+      // Calculate and display total
+      updateTotalPrice();
+    }
+
+    // Calculate total price
+    function calculateTotal() {
+      const basePrice = currentItem.basePrice;
+      const sizeAdd = sizePriceAddition;
+      const total = (basePrice + sizeAdd) * quantity;
+      return total.toFixed(2);
+    }
+
+    // Update total price display
+    function updateTotalPrice() {
+      totalPriceDisplay.textContent = `$${calculateTotal()}`;
+    }
+
+    // Size selection
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all size buttons
+        sizeButtons.forEach(btn => {
+          btn.classList.remove('bg-[#A6171B]', 'text-white');
+          btn.classList.add('hover:bg-[#A6171B]', 'hover:text-white');
+        });
+        
+        // Add active class to clicked button
+        button.classList.add('bg-[#A6171B]', 'text-white');
+        button.classList.remove('hover:bg-[#A6171B]', 'hover:text-white');
+        
+        // Update selected size and price addition
+        selectedSize = button.dataset.size;
+        sizePriceAddition = parseFloat(button.dataset.priceAdd);
+        
+        // Update total price
+        updateTotalPrice();
+      });
+    });
+
+    // Location selection
+    locationButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all location buttons
+        locationButtons.forEach(btn => {
+          btn.classList.remove('bg-[#A6171B]', 'text-white');
+          btn.classList.add('hover:bg-[#A6171B]', 'hover:text-white');
+        });
+        
+        // Add active class to clicked button
+        button.classList.add('bg-[#A6171B]', 'text-white');
+        button.classList.remove('hover:bg-[#A6171B]', 'hover:text-white');
+        
+        // Update selected location
+        selectedLocation = button.dataset.location;
+      });
+    });
+
+    // Quantity controls
+    increaseBtn.addEventListener('click', () => {
+      quantity++;
+      quantityDisplay.textContent = quantity;
+      updateTotalPrice();
+    });
+
+    decreaseBtn.addEventListener('click', () => {
+      if (quantity > 1) {
+        quantity--;
+        quantityDisplay.textContent = quantity;
+        updateTotalPrice();
+      }
+    });
+
+    // Add to cart functionality
+    addToCartBtn.addEventListener('click', () => {
+      const cartItem = {
+        id: currentItem.id,
+        name: currentItem.name,
+        basePrice: currentItem.basePrice,
+        size: selectedSize,
+        location: selectedLocation,
+        quantity: quantity,
+        total: calculateTotal(),
+        image: currentItem.image
+      };
+      
+      // Get existing cart from localStorage or create empty array
+      let cart = JSON.parse(localStorage.getItem('yummy-cart')) || [];
+      
+      // Add item to cart
+      cart.push(cartItem);
+      
+      // Save back to localStorage
+      localStorage.setItem('yummy-cart', JSON.stringify(cart));
+      
+      // Update cart counter
+      updateCartCounter();
+      
+      // Show success message
+      alert(`${quantity} ${currentItem.name} (${selectedSize}) added to cart!`);
+    });
+
+    // Buy now functionality
+    buyNowBtn.addEventListener('click', () => {
+      // For now, same as add to cart but redirect to checkout
+      addToCartBtn.click();
+      // Redirect to checkout page (you'll need to create this)
+      // window.location.href = 'checkout.html';
+    });
+
+    // Update cart counter
+    function updateCartCounter() {
+      const cart = JSON.parse(localStorage.getItem('yummy-cart')) || [];
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      
+      if (cartCounter) {
+        cartCounter.innerHTML = `${totalItems} <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+          <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+        </svg>`;
+      }
+    }
+
+    // Initialize the page
+    initializePage();
+    updateCartCounter(); // Load cart count on page load
+  </script>
+</body>
+</html>

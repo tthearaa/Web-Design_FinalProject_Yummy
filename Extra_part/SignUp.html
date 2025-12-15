@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Modak&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .font-modak { font-family: 'Modak', cursive; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+
+<body class="h-screen flex flex-col justify-between font-poppins">
+  <div id="login-header" class="relative h-60 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover flex flex-col">
+    <section class="h-1/2 flex  justify-between items-center px-4">
+      <div class="text-3xl h-full font-modak flex items-center text-white m-2 [-webkit-text-stroke:1px_#A6171B]">
+        Home
+      </div>
+      <div class="text-7xl h-full font-modak flex items-end text-[#A6171B]">
+        YUMMY
+      </div>
+      <div class="text-3xl h-full font-modak flex items-center text-white m-2 [-webkit-text-stroke:1px_#A6171B]">
+        <a href="Menu.html">Menu</a>
+      </div>
+    </section>
+  </div>
+
+  <section id="login-body" class="bg-white flex flex-col justify-between h-[85%]">
+    <section class="flex flex-col h-full items-center justify-center gap-5">
+      <div class="text-[#A6171B] text-5xl font-bold">
+        SIGN UP
+      </div>
+
+      <input 
+        class="border-[#A6171B] border-[3px] rounded-3xl p-2 pl-5 w-[700px] placeholder-[#A6171B] " type="text" placeholder="Name..."
+        >
+      <input class="border-[#A6171B] border-[3px] rounded-3xl p-2 pl-5 w-[700px] placeholder-[#A6171B]" type="email" placeholder="Email...">
+      <input class="border-[#A6171B] border-[3px] rounded-3xl p-2 pl-5 w-[700px] placeholder-[#A6171B] " type="password" placeholder="Password...">
+
+      <button class="bg-[#A6171B] text-white p-2 w-40 rounded-full">
+        Sign up
+      </button>
+    </section>
+
+    <section id="body-extra" class="bg-white h-[15%] font-semibold flex items-center justify-center">
+      <span>
+        Already have an Account?
+        <a href="Login.html" class="text-[#A6171B] underline">Log In</a>
+      </span>
+    </section>
+  </section>
+
+  <section id="footer" class="bg-[#A6171B] flex w-full p-4 justify-between">
+    <div class="text-white text-6xl w-2/6 font-modak flex items-center justify-center">
+      YUMMY
+    </div>
+
+    <div class="w-3/6 flex text-white gap-15 item-center justify-end">
+      <div class="flex flex-col">
+        <span>HOME</span>
+        <span>ABOUT US</span>
+      </div>
+      <div class="flex flex-col">
+        <span>NEWS</span>
+        <span>STORE</span>
+      </div>
+      <div class="flex flex-col">
+        <span>CONTACT</span>
+        <span><a href="Menu.html">MENU</a></span>
+      </div>
+    </div>
+
+    <div class="w-2/6 flex justify-end items-end text-white">
+      ©2025 YUMMY
+    </div>
+  </section>
+
+</body>
+
+<script>
+    
+
+</script>
+</html>
