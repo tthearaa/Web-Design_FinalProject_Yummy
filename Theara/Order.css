@@ -1,0 +1,12 @@
+.size-btn{
+  border-radius: 100px;
+  width: 20px;
+  cursor: pointer;
+}
+.size-btn:hover{
+  background-color: yellow;
+}
+
+.prodcutpic{
+  height: 450px;
+}

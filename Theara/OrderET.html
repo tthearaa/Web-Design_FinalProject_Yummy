@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Now</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="stylesheet" href="Order.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Modak&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .font-modak { font-family: 'Modak', cursive; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between font-poppins">
+  <div id="main-header-nav-bar" class="relative h-45 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover">
+    <section class="h-1/2 flex ustify-between items-center px-4 flex-row justify-between gap-20 mt-3">
+        <div id="logo-side" class="w-2/6 flex justify-center items-center">
+            <div class="text-6xl h-full font-modak flex items-end text-[#A6171B]">
+                YUMMY
+            </div>
+        </div>
+        <div id="nav-side" class="flex flex-row justify-center align-middle w-4/6 gap-10 [-webkit-text-stroke:2px_#A6171B]">
+            <div id="nav-bar" class=" flex flex-row justify-center font-modak text-3xl gap-10">
+                <div class="flex items-center text-white m-2 ">
+                    Home
+                </div>
+                <div class="flex items-center text-white m-2 ">
+                    <a href="Menu.html">Menu</a>
+                </div>
+                <div class="flex items-center text-white m-2 ">
+                    Merchandise
+                </div>
+                <div class="flex items-center text-white m-2 ">
+                    About Us
+                </div>
+            </div>
+            <div id="shopping-items-counter" class="bg-[#A6171B] flex flex-row justify-center text-2xl items-center gap-2 w-17 h-12 rounded-2xl text-white font-semibold">
+              0 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg>
+            </div>
+        </div>    
+    </section>
+  </div>
+
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Left Column - Product Info -->
+      <div>
+        
+        <!-- Product Card -->
+        <div class="product-card mb-8">
+          <div class="p-8">
+            <!-- Product Image Placeholder -->
+            <div class=" rounded-2xl h-80 flex flex-col items-center justify-center mb-6">
+              <img src="espressotee.png" alt="tee" class="prodcutpic">
+            </div>
+            
+            <!-- Price and More Button -->
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 class="text-4xl font-bold text-[#A6171B]">$9.99</h3>
+                <p class="text-gray-600 mt-2 text-lg">100% Cotton</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column - Order Form -->
+      <div class="bg-white p-8 rounded-3xl shadow-xl">
+        <h2 class="text-4xl font-bold text-[#A6171B] mb-8">Espresso T-Shirt</h2>
+        
+        <!-- Size Selection -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Size</h3>
+          <div class="flex flex-wrap gap-4">
+            <button class="size-btn">S</button>
+            <button class="size-btn">M</button>
+            <button class="size-btn">L</button>
+            <button class="size-btn">XL</button>
+            <button class="size-btn">XXL</button>
+          </div>
+        </div>
+        
+        <!-- Location Selection -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Location</h3>
+          <select class="select-location">
+            <option value="">Select your location...</option>
+            <option value="downtown">Downtown Store</option>
+            <option value="mall">Shopping Mall Branch</option>
+            <option value="university">University Campus</option>
+            <option value="airport">Airport Terminal</option>
+          </select>
+        </div>
+        
+        <!-- Quantity -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Quantity</h3>
+          <div class="flex items-center gap-4">
+            <button class="quantity-btn minus-btn">-</button>
+            <span class="quantity-value">1</span>
+            <button class="quantity-btn plus-btn">+</button>
+          </div>
+        </div>
+        
+        <!-- Add to Cart Button -->
+        <button class="add-to-cart-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+            <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+          </svg>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </main>
+
+
+  
+  <footer class="bg-[#A6171B] text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <!-- Logo -->
+        <div class="text-6xl font-modak mb-6 md:mb-0">
+          YUMMY
+        </div>
+        
+        <!-- Navigation Links -->
+        <div class="flex flex-col md:flex-row gap-12 md:gap-24 mb-6 md:mb-0">
+          <!-- First Column -->
+          <div class="flex flex-col items-center md:items-start">
+            <span class="text-xl font-semibold mb-2 cursor-pointer hover:text-[#F2C045] transition-colors">HOME</span>
+            <span class="text-xl font-semibold cursor-pointer hover:text-[#F2C045] transition-colors">ABOUT US</span>
+          </div>
+          
+          <!-- Second Column -->
+          <div class="flex flex-col items-center md:items-start">
+            <span class="text-xl font-semibold mb-2 cursor-pointer hover:text-[#F2C045] transition-colors">NEWS</span>
+            <span class="text-xl font-semibold cursor-pointer hover:text-[#F2C045] transition-colors">STORE</span>
+          </div>
+          
+          <!-- Third Column -->
+          <div class="flex flex-col items-center md:items-start">
+            <span class="text-xl font-semibold mb-2 cursor-pointer hover:text-[#F2C045] transition-colors">CONTACT</span>
+            <span class="text-xl font-semibold cursor-pointer hover:text-[#F2C045] transition-colors">MENU</span>
+          </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="text-base md:text-lg text-center md:text-right">
+          ©2025 YUMMY
+        </div>
+      </div>
+</body>
+</html>
