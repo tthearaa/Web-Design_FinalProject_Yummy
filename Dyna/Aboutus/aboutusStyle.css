@@ -224,7 +224,23 @@ body{
 
 .infoImage img{
   width: 400px;
+  animation: rotate 5s ease alternate infinite;
+  transition: transform 10s ease;
+  animation-timeline: view(100%, 10%) ;
 }
+.infoImage :hover{
+  transform: rotate(360deg);
+
+}
+@keyframes rotate{
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
 
 
 .image{
