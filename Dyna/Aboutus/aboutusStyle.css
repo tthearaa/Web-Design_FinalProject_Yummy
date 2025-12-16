@@ -96,6 +96,7 @@ body{
     grid-template-columns: 650px 650px;
     padding: 100px 150px;
     gap: 10px;
+    align-content: center;
     
 }
 
@@ -198,7 +199,7 @@ body{
     grid-template-columns: 650px 650px;
     padding: 100px 150px;
     gap: 10px;
-    
+    align-content: center;
 }
 .info{
     display: grid;
