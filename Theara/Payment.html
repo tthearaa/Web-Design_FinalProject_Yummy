@@ -4,9 +4,212 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pay Now!</title>
-   <link rel="stylesheet" href="Payment.css" />
-</head>
-<body>
   
-</body>
-</html>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Modak&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .font-modak { font-family: 'Modak', cursive; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+    
+    /* Animation for receipt */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes printEffect {
+      0% { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between font-poppins">
+  <div id="main-header-nav-bar" class="relative h-45 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover">
+    <section class="h-1/2 flex justify-between items-center px-4 flex-row justify-between gap-20 mt-3">
+        <div id="logo-side" class="w-2/6 flex justify-center items-center">
+            <div class="text-6xl h-full font-modak flex items-end text-[#A6171B]">
+                YUMMY
+            </div>
+        </div>
+        <div id="nav-side" class="flex flex-row justify-center align-middle w-4/6 gap-10 [-webkit-text-stroke:2px_#A6171B]">
+            <div id="nav-bar" class="flex flex-row justify-center font-modak text-3xl gap-10">
+                <div class="flex items-center text-white m-2">
+                    <a href="../Dyna/Home/Home.html">Home</a>
+                </div>
+                <div class="flex items-center text-white m-2">
+                    <a href="../Extra_part/Menu.html">Menu</a>
+                </div>
+                <div class="flex items-center text-white m-2">
+                    <a href="Merchandise.html">Merchandise</a>
+                </div>
+                <div class="flex items-center text-white m-2">
+                    <a href="../Dyna/Aboutus/AboutUs.html">About Us</a>
+                </div>
+            </div>
+            <div id="shopping-items-counter" class="bg-[#A6171B] flex flex-row justify-center text-2xl items-center gap-2 w-17 h-12 rounded-2xl text-white font-semibold">
+              0 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg>
+            </div>
+        </div>    
+    </section>
+  </div>
+
+  <main class="grow container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <!-- Order Confirmation Header -->
+      <div class="text-center mb-12" style="animation: fadeIn 0.8s ease-out;">
+        <h1 class="text-5xl font-modak text-[#A6171B] mb-4">Order Confirmed!</h1>
+        <p class="text-xl text-gray-600">Thank you for your purchase. Here's your receipt.</p>
+        <div class="mt-4 flex justify-center items-center gap-2 text-green-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+            <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+          </svg>
+          <span class="text-2xl font-semibold">Payment Successful</span>
+        </div>
+      </div>
+
+      <!-- Receipt Card -->
+      <div class="bg-white rounded-3xl shadow-2xl p-8 mb-8" style="animation: printEffect 0.6s ease-out;">
+        <!-- Receipt Header -->
+        <div class="border-b-2 border-dashed border-gray-300 pb-6 mb-6">
+          <div class="flex justify-between items-center">
+            <div>
+              <h2 class="text-3xl font-bold text-gray-800">YUMMY Store</h2>
+              <p class="text-gray-600">Order Receipt</p>
+            </div>
+            <div class="text-right">
+              <p class="text-gray-600">Order #</p>
+              <p class="text-2xl font-bold text-[#A6171B]" id="orderNumber">YM<span id="orderId">00001</span></p>
+              <p class="text-gray-600" id="orderDate"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Items -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Order Summary</h3>
+          <div id="receiptItems" class="space-y-4">
+            <!-- Items will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Receipt Totals -->
+        <div class="border-t-2 border-gray-200 pt-6">
+          <div class="grid grid-cols-2 gap-4 max-w-md ml-auto">
+            <div class="text-right text-gray-600">Subtotal:</div>
+            <div class="text-right font-semibold" id="subtotal">$0.00</div>
+            
+            <div class="text-right text-gray-600">Tax (10%):</div>
+            <div class="text-right font-semibold" id="tax">$0.00</div>
+            
+            <div class="text-right text-gray-600">Shipping:</div>
+            <div class="text-right font-semibold">FREE</div>
+            
+            <div class="text-right text-2xl font-bold text-[#A6171B] mt-2">Total:</div>
+            <div class="text-right text-2xl font-bold text-[#A6171B] mt-2" id="total">$0.00</div>
+          </div>
+        </div>
+
+        <!-- Order Details -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold text-gray-800 mb-3">Shipping Information</h4>
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <p class="font-medium" id="shippingLocation"></p>
+              <p class="text-gray-600 mt-1">Standard Shipping</p>
+              <p class="text-gray-600">Estimated Delivery: 3-5 business days</p>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-xl font-semibold text-gray-800 mb-3">Payment Method</h4>
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <div class="flex items-center gap-3">
+                <div class="bg-[#A6171B] text-white p-2 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-medium">Credit / Debit Card</p>
+                  <p class="text-gray-600 text-sm">Payment completed successfully</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" style="animation: fadeIn 1s ease-out;">
+        <button onclick="printReceipt()" class="flex-1 max-w-md mx-auto sm:mx-0 px-8 py-4 bg-[#A6171B] text-white rounded-xl font-semibold text-lg hover:bg-[#8a1316] transition-colors flex items-center justify-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+            <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1"/>
+          </svg>
+          Print Receipt
+        </button>
+        
+        <button onclick="goToHome()" class="flex-1 max-w-md mx-auto sm:mx-0 px-8 py-4 bg-white border-2 border-[#A6171B] text-[#A6171B] rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+          </svg>
+          Back to Home
+        </button>
+      </div>
+      
+      <!-- Order Status -->
+      <div class="mt-12 text-center text-gray-600" style="animation: fadeIn 1.2s ease-out;">
+        <p class="mb-2">You will receive an email confirmation shortly.</p>
+        <p>Need help? Contact us at <span class="text-[#A6171B] font-semibold">support@yummy.com</span></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-[#A6171B] text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <!-- Logo -->
+        <div class="text-6xl font-modak mb-6 md:mb-0">
+          YUMMY
+        </div>
+        
+        <!-- Navigation Links -->
+        <div class="flex flex-col md:flex-row gap-12 md:gap-24 mb-6 md:mb-0">
+          <!-- First Column -->
+          <div class="flex flex-col items-center md:items-start">
+            <span class="text-xl font-semibold mb-2 cursor-pointer hover:text-[#F2C045] transition-colors">HOME</span>
+            <span class="text-xl font-semibold cursor-pointer hover:text-[#F2C045] transition-colors">ABOUT US</span>
+          </div>
+          
+          <!-- Second Column -->
+          <div class="flex flex-col items-center md:items-start">
+            <span class="text-xl font-semibold mb-2 cursor-pointer hover:text-[#F2C045] transition-colors">NEWS</span>
+            <span class="text-xl font-semibold cursor-pointer hover:text-[#F2C045] transition-colors">STORE</span>
+          </div>
+          
+          <!-- Third Column -->
+          <div class="flex flex-col items-center md:items-start">
+            <span class="text-xl font-semibold mb-2 cursor-pointer hover:text-[#F2C045] transition-colors">CONTACT</span>
+            <span class="text-xl font-semibold cursor-pointer hover:text-[#F2C045] transition-colors">MENU</span>
+          </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="text-base md:text-lg text-center md:text-right">
+          ©2025 YUMMY
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="payment.js"></script>
+  </body>
+  </html>

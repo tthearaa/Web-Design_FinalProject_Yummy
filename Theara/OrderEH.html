@@ -30,7 +30,7 @@
         <div id="nav-side" class="flex flex-row justify-center align-middle w-4/6 gap-10 [-webkit-text-stroke:2px_#A6171B]">
             <div id="nav-bar" class=" flex flex-row justify-center font-modak text-3xl gap-10">
                 <div class="flex items-center text-white m-2 ">
-                    <a href="../Dyna/Home/Home.html"></a>
+                    <a title="dyna" href="../Dyna/Home/Home.html">Home</a>
                 </div>
                 <div class="flex items-center text-white m-2 ">
                     <a href="../Extra_part/Menu.html">Menu</a>
@@ -39,7 +39,7 @@
                     <a href="Merchandise.html">Merchandise</a>
                 </div>
                 <div class="flex items-center text-white m-2 ">
-                    <a href="../Dyna/Aboutus/AboutUs.html">Menu</a>
+                    <a href="../Dyna/Aboutus/AboutUs.html">About Us</a>
                 </div>
             </div>
             <div id="shopping-items-counter" class="bg-[#A6171B] flex flex-row justify-center text-2xl items-center gap-2 w-17 h-12 rounded-2xl text-white font-semibold">
@@ -94,12 +94,13 @@
         <!-- Location Selection -->
         <div class="mb-8">
           <h3 class="text-2xl font-semibold text-gray-800 mb-4">Location</h3>
-          <select class="select-location">
+          <label for="select-location" class="text-2xl font-semibold text-gray-800 mb-4">Location</label>
+          <select id="select-location" class="select-location">
             <option value="">Select your location...</option>
-            <option value="downtown">Downtown Store</option>
-            <option value="mall">Shopping Mall Branch</option>
-            <option value="university">University Campus</option>
-            <option value="airport">Airport Terminal</option>
+            <option value="CADT">CADT</option>
+            <option value="Mall">Aeon Mall Phnom Penh</option>
+            <option value="branch">Toul Kork</option>
+            <option value="airport">Techo International Airport</option>
           </select>
         </div>
         
@@ -161,5 +162,7 @@
           ©2025 YUMMY
         </div>
       </div>
+      <script src="cart.js"></script>
 </body>
 </html>
+

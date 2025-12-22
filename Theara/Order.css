@@ -1,12 +1,88 @@
-.size-btn{
-  border-radius: 100px;
-  width: 20px;
-  cursor: pointer;
-}
-.size-btn:hover{
-  background-color: yellow;
-}
-
 .prodcutpic{
   height: 450px;
+}
+
+.size-btn {
+padding: 12px 24px;
+border: 2px solid #e5e7eb;
+border-radius: 12px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s ease;
+background: white;
+color: #4b5563;
+display: flex;      
+align-items: center;    
+justify-content: center; 
+text-align: center; 
+  }
+.size-btn:hover {
+ border-color: #A6171B;
+ transform: translateY(-2px);
+}
+        
+.quantity-btn {
+  width: 40px;
+  height: 40px; 
+  border-radius: 50%; 
+  border: 2px solid #A6171B;
+  background: white;
+  color: #A6171B;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+        
+.quantity-btn:hover {
+background: #A6171B;
+color: white;
+}
+        
+.quantity-value {
+font-size: 1.5rem;
+font-weight: 600;
+min-width: 40px;
+text-align: center;
+}
+        
+.select-location {
+ width: 100%;
+ padding: 12px 16px;
+ border: 2px solid #e5e7eb;
+ border-radius: 12px;
+font-size: 1rem;
+background: white;
+cursor: pointer;
+transition: border-color 0.3s ease;
+}
+        
+.select-location:focus {
+outline: none;
+border-color: #A6171B;
+}
+        
+.add-to-cart-btn {
+ width: 100%;
+padding: 16px;
+background: #A6171B;
+color: white;
+border: none;
+border-radius: 12px;
+font-size: 1.25rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+justify-content: center;
+ gap: 12px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+        
+.add-to-cart-btn:hover {
+ background: #8a1316;
+ transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(166, 23, 27, 0.3);
 }
