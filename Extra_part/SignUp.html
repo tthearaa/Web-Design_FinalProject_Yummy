@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Sign Up - YUMMY</title>
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -27,7 +27,7 @@
         YUMMY
       </div>
       <div class="text-3xl h-full font-modak flex items-center text-white m-2 [-webkit-text-stroke:1px_#A6171B]">
-        <a href="Menu.html">Menu</a>
+        <a>Menu</a>
       </div>
     </section>
   </div>
@@ -38,13 +38,38 @@
         SIGN UP
       </div>
 
-      <input 
-        class="border-[#A6171B] border-[3px] rounded-3xl p-2 pl-5 w-[700px] placeholder-[#A6171B] " type="text" placeholder="Name..."
-        >
-      <input class="border-[#A6171B] border-[3px] rounded-3xl p-2 pl-5 w-[700px] placeholder-[#A6171B]" type="email" placeholder="Email...">
-      <input class="border-[#A6171B] border-[3px] rounded-3xl p-2 pl-5 w-[700px] placeholder-[#A6171B] " type="password" placeholder="Password...">
+      <!-- Name Input -->
+      <div class="relative w-[700px]">
+        <input id="name" 
+               class="border-[#A6171B] border-[3px] rounded-3xl p-2 pl-5 w-full placeholder-[#A6171B]" 
+               type="text" 
+               placeholder="Name...">
+      </div>
 
-      <button class="bg-[#A6171B] text-white p-2 w-40 rounded-full">
+      <!-- Email Input -->
+      <div class="relative w-[700px]">
+        <input id="email"
+               class="border-[#A6171B] border-[3px] rounded-3xl p-2 pl-5 w-full placeholder-[#A6171B]" 
+               type="email" 
+               placeholder="Email...">
+      </div>
+
+      <!-- Password Input with Show/Hide Button -->
+      <div class="relative w-[700px]">
+        <input id="password"
+               class="border-[#A6171B] border-[3px] rounded-3xl p-2 pl-5 w-full placeholder-[#A6171B]" 
+               type="password" 
+               placeholder="Password...">
+        <button id="showBtn" 
+                type="button" 
+                class="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#A6171B] font-medium cursor-pointer">
+          Show
+        </button>
+      </div>
+
+      <!-- Sign Up Button -->
+      <button onclick="signup()" 
+              class="bg-[#A6171B] text-white p-2 w-40 rounded-full hover:bg-[#8a1417] transition-colors">
         Sign up
       </button>
     </section>
@@ -83,11 +108,6 @@
       </div>
     </div>
   </section>
-
-</body>
-
-<script>
-    
-
-</script>
+  </body>
+  <script src="../Theara/signup.js"></script>
 </html>

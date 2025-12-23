@@ -1,38 +1,15 @@
-// Get order data from localStorage or URL parameters
     document.addEventListener('DOMContentLoaded', function() {
-      // Generate random order ID
-      const orderId = Math.floor(Math.random() * 90000) + 10000;
+      const orderId = 0o1;
       document.getElementById('orderId').textContent = orderId;
-      
-      // Set current date
-      const now = new Date();
-      const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-      };
-      document.getElementById('orderDate').textContent = now.toLocaleDateString('en-US', options);
       
       // Get cart data from localStorage
       const cartData = JSON.parse(localStorage.getItem('lastOrder')) || [];
-      
-      // If no cart data, show demo data
-      if (cartData.length === 0) {
-        showDemoReceipt();
-      } else {
-        populateReceipt(cartData);
-        // Clear cart after checkout
-        localStorage.removeItem('lastOrder');
-      }
-      
-      // Update cart counter to 0
+      fillitem(cartData);
+      localStorage.removeItem('lastOrder');
       updateCartCounter();
     });
     
-    function populateReceipt(cartItems) {
+    function fillitem(cartItems) {
       const receiptItems = document.getElementById('receiptItems');
       let subtotal = 0;
       
@@ -61,15 +38,13 @@
         
         receiptItems.innerHTML += itemHTML;
         
-        // Set shipping location from first item
         if (index === 0) {
           document.getElementById('shippingLocation').textContent = 
             item.location.charAt(0).toUpperCase() + item.location.slice(1) + " Store";
         }
       });
       
-      // Calculate totals
-      const tax = subtotal * 0.1; // 10% tax
+      const tax = subtotal * 0.1;
       const total = subtotal + tax;
       
       document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;

@@ -1,40 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get current product from page
+    //get product for the page
     const productName = document.querySelector('h2.text-4xl').textContent;
     const productPrice = parseFloat(document.querySelector('h3.text-4xl').textContent.replace('$', ''));
     const productImage = document.querySelector('.prodcutpic').src;
     
-    // Variables for order details
+    //set variables
     let selectedSize = 'M';
     let selectedLocation = '';
     let quantity = 1;
     
-    // ===== SIZE SELECTION =====
+    //size button
     const sizeButtons = document.querySelectorAll('.size-btn');
     sizeButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove selected class from all buttons
             sizeButtons.forEach(btn => {
                 btn.style.background = 'white';
                 btn.style.color = '#4b5563';
             });
-            
-            // Add selected class to clicked button
             this.style.background = '#A6171B';
             this.style.color = 'white';
             this.style.transform = 'scale(1.05)';
-            
             selectedSize = this.textContent;
         });
         
-        // Set default selection (M)
+        // Set default
         if (button.textContent === 'M') {
             button.style.background = '#A6171B';
             button.style.color = 'white';
         }
     });
     
-    // ===== QUANTITY SELECTION =====
+    //amount
     const minusBtn = document.querySelector('.minus-btn');
     const plusBtn = document.querySelector('.plus-btn');
     const quantityDisplay = document.querySelector('.quantity-value');
@@ -51,13 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
         quantityDisplay.textContent = quantity;
     });
     
-    // ===== LOCATION SELECTION =====
+    //lcoation
     const locationSelect = document.querySelector('.select-location');
     locationSelect.addEventListener('change', function() {
         selectedLocation = this.value;
     });
     
-    // ===== ADD TO CART =====
+    //add to cart button
     const addToCartBtn = document.querySelector('.add-to-cart-btn');
     addToCartBtn.addEventListener('click', function() {
         if (!selectedLocation) {
@@ -65,10 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Get existing cart or create new one
+        //get create a cart or pull from existing cart
         const cart = JSON.parse(localStorage.getItem('yummyCart')) || [];
-        
-        // Create cart item
+
         const cartItem = {
             id: productName.toLowerCase().replace(/[^a-z0-9]/g, '-'),
             name: productName,
@@ -79,8 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
             location: selectedLocation,
             addedDate: new Date().toISOString()
         };
-        
-        // Check if same item already exists
         const existingItemIndex = cart.findIndex(item => 
             item.name === cartItem.name && 
             item.size === cartItem.size && 
@@ -88,21 +81,15 @@ document.addEventListener('DOMContentLoaded', function() {
         );
         
         if (existingItemIndex > -1) {
-            // Update quantity if item exists
             cart[existingItemIndex].quantity += cartItem.quantity;
         } else {
-            // Add new item
             cart.push(cartItem);
         }
-        
-        // Save to localStorage
         localStorage.setItem('yummyCart', JSON.stringify(cart));
-        
-        // Update cart counter
         updateCartCounter();
     });
     
-    // ===== CART COUNTER =====
+    //cart
     function updateCartCounter() {
         const cart = JSON.parse(localStorage.getItem('yummyCart')) || [];
         const cartCounter = document.getElementById('shopping-items-counter');
@@ -116,19 +103,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 </svg>
             `;
             
-            // Make cart icon clickable
             cartCounter.addEventListener('click', function() {
                 showSimpleCart(cart);
             });
         }
     }
     
-    // Initialize cart counter
     updateCartCounter();
     
-    // ===== SHOW CART FUNCTION =====
+    //all this is in merchandise.html
+    //show cart button
     function showSimpleCart(cart) {
-        // Create cart overlay
+        //cart overlay
         const cartOverlay = document.createElement('div');
         cartOverlay.id = 'cartOverlay'; // Add ID
         cartOverlay.style.cssText = `
@@ -143,9 +129,9 @@ document.addEventListener('DOMContentLoaded', function() {
             justify-content: flex-end;
         `;
         
-        // Create cart sidebar
-        const cartSidebar = document.createElement('div');
-        cartSidebar.style.cssText = `
+        //sidebar
+        const cartSbar = document.createElement('div');
+        cartSbar.style.cssText = `
             background: white;
             width: 350px;
             height: 100%;
@@ -153,8 +139,8 @@ document.addEventListener('DOMContentLoaded', function() {
             overflow-y: auto;
         `;
         
-        // Cart content
-        let cartHTML = `
+        //cart cards
+        let cartcards = `
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <h2 style="font-size: 24px; font-weight: bold; color: #A6171B;">Your Cart</h2>
                 <button id="closeCart" style="background: none; border: none; font-size: 24px; cursor: pointer; padding: 5px;">×</button>
@@ -162,7 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         if (cart.length === 0) {
-            cartHTML += `
+            //show the cart is empty
+            cartcards += `
                 <div style="text-align: center; padding: 40px 0;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#ccc" viewBox="0 0 16 16" style="margin-bottom: 10px;">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
@@ -171,14 +158,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
         } else {
-            cartHTML += `<div style="margin-bottom: 20px;">`;
+            //put in the times
+            cartcards += `<div style="margin-bottom: 20px;">`;
             
             let total = 0;
             cart.forEach(item => {
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
                 
-                cartHTML += `
+                cartcards += `
                     <div style="display: flex; padding: 10px 0; border-bottom: 1px solid #eee;">
                         <div style="width: 60px; height: 60px; background: #f5f5f5; border-radius: 8px; margin-right: 10px; 
                              display: flex; align-items: center; justify-content: center; overflow: hidden;">
@@ -197,8 +185,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 `;
             });
-            
-            cartHTML += `
+            //stuff at the bottom
+            cartcards += `
                 <div style="border-top: 2px solid #A6171B; padding-top: 15px;">
                     <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: bold;">
                         <span>Total:</span>
@@ -222,8 +210,8 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         }
         
-        cartSidebar.innerHTML = cartHTML;
-        cartOverlay.appendChild(cartSidebar);
+        cartSbar.innerHTML = cartcards;
+        cartOverlay.appendChild(cartSbar);
         document.body.appendChild(cartOverlay);
         
         // Close button function
@@ -235,13 +223,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Close button event listener
-        const closeCartBtn = cartSidebar.querySelector('#closeCart');
+        const closeCartBtn = cartSbar.querySelector('#closeCart');
         if (closeCartBtn) {
             closeCartBtn.addEventListener('click', closeCart);
         }
         
         // Checkout button event listener
-        const checkoutBtn = cartSidebar.querySelector('#checkoutBtn');
+        const checkoutBtn = cartSbar.querySelector('#checkoutBtn');
         if (checkoutBtn) {
             checkoutBtn.addEventListener('click', function() {
                 // Store cart data temporarily for the receipt page
@@ -254,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Clear Cart button event listener
-        const clearCartBtn = cartSidebar.querySelector('#clearCartBtn');
+        const clearCartBtn = cartSbar.querySelector('#clearCartBtn');
         if (clearCartBtn) {
             clearCartBtn.addEventListener('click', function() {
                 if (confirm('Are you sure you want to clear your cart?')) {
@@ -272,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Prevent clicks inside the sidebar from closing the overlay
-        cartSidebar.addEventListener('click', function(e) {
+        cartSbar.addEventListener('click', function(e) {
             e.stopPropagation();
         });
         
