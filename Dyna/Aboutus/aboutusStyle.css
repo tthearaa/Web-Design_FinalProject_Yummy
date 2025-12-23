@@ -23,15 +23,17 @@
    position: sticky;
    top: 0;
    z-index:1000;
-   /* background-color:#F2C045 ; */
+   background-color:#F2C045 ;
+   color:#A6171B;
    /* background-color: transparent; */
    padding-left: 40px;
    padding-right: 40px;
+   
    /* backdrop-filter: blur(10px); */
-   /*border: 3px solid  rebeccapurple;*/
+   /* border: 3px solid  rebeccapurple; */
  }
 body{
-    /*border: 3px solid rgb(205, 0, 0) ;*/
+   /* border: 3px solid rgb(205, 0, 0) ; */
      width: 100%;
      height: auto;
      margin: 0;
@@ -43,7 +45,7 @@ body{
    justify-content: flex-start;
    font-family: 'Modak', cursive;
    font-size: 50px;
-   color: #000000;
+   
  }
  .nav{
    display: flex;
@@ -59,12 +61,14 @@ body{
  .nav a{
     display: inline-block;
   font-family: 'Modak', cursive;
-  color:#000000;
+  
   text-decoration: none;
   transition: transform 0.25s ease-in-out;
  }
  .nav a:hover{
   transform: scale(1.25);
+  /* color:#c72026; */
+  color:#a6171cd8;
 }
 
 .sticky{
@@ -76,10 +80,7 @@ body{
     flex-direction: column;
     
 }
-.bodyPage #storecard{
-  display: flex;
-  justify-self: center;
-}
+
 
 .image img{
     height: 100%;
@@ -112,7 +113,7 @@ body{
     grid-row: 1;
     align-items: end;
     font-size: 3rem;
-    /* font-size: clamp(1.8rem,10w,5rem); */
+
 
 }
 .info p{
@@ -128,74 +129,74 @@ body{
 .infoImage img{
   width: 400px;
 }
-.heart_warming_service{
+.heart_warming_service {
     width: 100%;
-    height: 750px;
+    min-height: 750px;
     background-color: #FFFBF4;
     display: grid;
-    
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    /* justify-items: center; */
-    /* border: 3px solid rebeccapurple; */
+    padding: 0 50px;
+    gap: 20px;
 }
-.heart{
-    display: grid;
-    grid-column: 1;
-    grid-template-rows: 1fr 1fr;
-    justify-items: end;
-    /* border: 3px solid rebeccapurple; */
+.heart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    padding-right: 20px;
 }
-.heart h2{
-    display: grid;
-    grid-row: 1;
-    align-content: end;
+.heart h2 {
     font-size: 6rem;
-    justify-items: end;
-    /* border: 3px solid rebeccapurple; */
+    color: #A6171B;
+    line-height: 0.9;
+    font-family: 'Modak', cursive;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
-.heart h3{
-    display: grid;
-    grid-row: 2;
-    font-size: 5rem;;
-    justify-items: end;
-    /* border: 3px solid rebeccapurple; */
+.heart h3 {
+    font-size: 5rem;
+    color: #A6171B;
+    line-height: 0.9;
+    font-family: 'Modak', cursive;
+    font-weight: 400;
 }
 
-
-.coffeSack{
-    grid-column: 2;
-    display: grid;
+.coffeSack {
+    display: flex;
     justify-content: center;
-    /* align-items: end; */
-    /* min-height: 100%; */
-    /* border: 3px solid rebeccapurple; */
+    align-items: center;
+    padding: 20px;
+    position: relative;
 }
-.coffeSack img{
-  width: auto;
-  height: 750px;
-  /* border: 3px solid rebeccapurple; */
+.coffeSack img {
+    max-height: 650px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+}
+.service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 20px;
+    max-width: 500px;
+}
+.service h2 {
+    font-size: 6rem;
+    color: #A6171B;
+    line-height: 0.9;
+    font-family: 'Modak', cursive;
+    font-weight: 400;
+}
+.service p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 15px;
 }
 
-.service{
-    grid-column: 3;
-    grid-template-rows: 1fr 1fr;
-    justify-items: start;
-    /* border: 3px solid rebeccapurple; */
-    padding-right:80px;
-}
-.service h2{
-    grid-row: 1;
-    align-content: center;
-    font-size: 6rem;
-    /* border: 3px solid rebeccapurple; */
-}
-.service p{
-    grid-row: 2;
-    /* border: 3px solid rebeccapurple; */
-    padding: 20px;
-    font-size: 1rem;
-}
 .brewingMaster{
     width: 100%;
     height: 750px;
@@ -243,14 +244,50 @@ body{
     transform: rotate(360deg);
   }
 }
-.image{
-  padding-top: 0;
+.cover {
+  font-size: 0;
+  line-height: 0;
 }
-img{
+
+.cover img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+    object-fit: cover;
+    position: sticky;
+    top: 0;
+}
+
+.cover #full{
   width: 100%;
   height: auto;
 }
-@media screen and (min-width: 320px) {
+@media (max-width: 599px)  {
+  .header {
+    height: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .logo {
+    font-size: 35px;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  
+  .nav {
+    font-size: 20px;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .nav a {
+    font-size: 18px;
+  }
 .fineIngredients, .brewingMaster{
   padding: 50px 80px;
   display: grid;
@@ -277,43 +314,47 @@ p{
   font-size: 2rem;
 }
 /* heart warming */
-.heart h2{
-font-size: 5rem;
-}
-.service h2{
-font-size: 5rem;
-}
-.heart h3{
-  font-size: 3rem;
-}
-.coffeSack img{
-  width: auto;
-  height: 450px;
-}
-.heart_warming_service{
-  height: 450px;
-  
-}
-.heart_warming_service p{
-  font-size: calc(1rem+1vw);
-  
-}
-  .image {
-    position: relative;
-  }
+  .heart_warming_service {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .heart {
+        align-items: center;
+        text-align: center;
+        padding-right: 0;
+    }
+    
+    .service {
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+        max-width: 100%;
+    }
+    
+    .heart h2,
+    .service h2 {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+    
+    .heart h3 {
+        font-size: 3rem;
+    }
+    
+    .coffeSack img {
+        max-height: 350px;
+    }
 
-  #storecard {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    margin: 0 auto;
-    width: 90%; /* optional: better on mobile */
-  }
-}
-@media screen and (min-width: 600px) {
-
-}
-@media screen and (min-width: 1024px) {
 
 }
+@media (min-width: 600px){
+
+.nav a{
+  font-size: 1.7rem;
+}
+
+}
+
 

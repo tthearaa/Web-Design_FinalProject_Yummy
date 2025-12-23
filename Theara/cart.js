@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cart = JSON.parse(localStorage.getItem('yummyCart')) || [];
 
         const cartItem = {
-            id: productName.toLowerCase().replace(/[^a-z0-9]/g, '-'),
+            id: productName.toLowerCase(),
             name: productName,
             price: productPrice,
             image: productImage,

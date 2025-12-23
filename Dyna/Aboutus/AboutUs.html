@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="aboutusStyle.css">
   <link href="https://fonts.googleapis.com/css2?family=Modak&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Modak&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .font-modak { font-family: 'Modak', cursive; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+  </style>
 </head>
 
 <body>
@@ -22,12 +32,12 @@
         </ul>
     </div>
     <div class="bodyPage">
-      <div class="image">
+      <div class="image top-images">
       <img src="frontimage.png" alt="shop">
       <img src="67+stores.png" alt="67storestext">
     </div>
 
-    <div class="fineIngredients">
+    <div class="fineIngredients"> 
       <div class="info">
         <h2>SELECTION OF FINE INGREDIENTS</h2>
         <p>Freshly roasted coffee beans are carefully selected to craft a brew that satisfies even the most discerning palate. Each batch is made from natural ingredients and roasted at precise temperatures to achieve a rich aroma, deep golden crema, and a smooth, full-bodied flavor with a perfectly balanced finish.</p>
@@ -44,7 +54,7 @@
       <h2>HEART</h2>
       <h3>WARMING</h3>
     </div>
-      <div class="coffeSack">
+    <div class="coffeSack">
       <img src="coffee sack.png" alt="coffee sack">
     </div>
     <div class="service">
@@ -66,11 +76,14 @@
     </div>
     <!-- end of brewing master -->
     <!-- open since 2006 -->
-     <div class="image">
-      <img src="oldStore.png" alt="old store">
+     <div class="cover">
+      <img id="old" src="oldStore.png" alt="old store">
       <img id="2006" src="since2006text.png" alt="since 2006 text">
       <img id="storecard" src="since2006card.png" alt="current store">
-     </div>
+      
+      
+    </div>
+    <img id="full" src="nth.png" alt="fullBody">
     <!-- end of open since 2006 -->
 
 
@@ -85,7 +98,31 @@
 
 <!-- end of body -->
 
+     <!-- footer -->
+  <section id="footer" class="bg-[#A6171B] flex w-full p-4 justify-between">
+    <div class="text-white text-6xl w-2/6 font-modak flex items-center justify-center">
+      YUMMY
+    </div>
 
+    <div class="w-3/6 flex text-white gap-15 item-center justify-end">
+      <div class="flex flex-col">
+        <span>HOME</span>
+        <span>ABOUT US</span>
+      </div>
+      <div class="flex flex-col">
+        <span>NEWS</span>
+        <span>STORE</span>
+      </div>
+      <div class="flex flex-col">
+        <span>CONTACT</span>
+        <span>MENU</span>
+      </div>
+    </div>
+
+    <div class="w-2/6 flex justify-end items-end text-white">
+      ©2025 YUMMY
+    </div>
+  </section>
 </body>
 
 </html>

@@ -19,18 +19,21 @@
    display: flex;
    height: 100px;
    align-items: center;
-   position: sticky;
+   position: fixed;
    top: 0;
    z-index:1000;
-   /* background-color:#F2C045 ; */
+      background-color:#F2C045 ;
+   color:#A6171B;
    /* background-color: transparent; */
    padding-left: 40px;
    padding-right: 40px;
    /* backdrop-filter: blur(10px); */
  }
 body{
+
      min-height: 100vh;
      margin: 0;
+     padding-top: 0;
 }
 
  .logo{
@@ -39,7 +42,6 @@ body{
    justify-content: flex-start;
    font-family: 'Modak', cursive;
    font-size: 50px;
-   color: #000000;
  }
  .nav{
    display: flex;
@@ -55,17 +57,31 @@ body{
  .nav a{
     display: inline-block;
   font-family: 'Modak', cursive;
-  color:#000000;
   text-decoration: none;
   transition: transform 0.25s ease-in-out;
  }
  .nav a:hover{
   transform: scale(1.25);
+  color:#a6171cd8;
 }
  .homeImage{
    width: 100%;
  }
+.cover {
+  font-size: 0;
+  line-height: 0;
+}
 
+.cover img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: sticky;
+  top: 0;
+}
 
  .card img{
    width: 300px;
@@ -88,13 +104,17 @@ body{
 
 }
 .container{
-   /* border: 2px solid hotpink; */
    width:fit-content;
    height: fit-content;
    display: flex;
    flex-direction: column;
    justify-items: center;
    gap: 30px;
+}
+.container .card:hover{
+  transform: rotateY(360deg);
+  
+  transition: 1s;
 }
 button{
    font-size: 20px;
@@ -124,7 +144,6 @@ button{
    align-content: center;
    justify-content: center;
    color: #A6171B;
-   /* background-color: red; */
 }
 
 .drinks{
@@ -132,14 +151,12 @@ button{
    grid-row: 2;
    grid-column: 2;
    align-content: end;
-   /* background-color: aqua; */
 }
 
 .bakery{
    display: grid;
    grid-row: 2;
    grid-column: 3;
-   /* background-color: aqua; */
 }
 
 .merchandise{
@@ -147,7 +164,6 @@ button{
    grid-row: 2;
    grid-column: 4;
    justify-content: start;
-   /* background-color: aqua; */
    
 }
 .offer button{
@@ -176,7 +192,6 @@ button{
 .image{
   display: grid;
   grid-column: 1;
-  /* background-color: aqua; */
   justify-items: end;
   align-items: end;
   
@@ -204,13 +219,8 @@ button{
   display: grid;
   grid-row: 2;
   font-size: 20px;
-  /* animation: typing 2s steps(30) infinite alternate-reverse; */
 }
-/* @keyframes typing {
-  from{
-    width: 0ch;
-  }
-} */
+
 .aboutUsinfo .btn{
   display: grid;
   grid-row: 3;
@@ -283,4 +293,258 @@ img {
 button {
   max-width: 100%;
 }
+
+@media (max-width: 1024px) {
+  .logo {
+    font-size: 40px;
+  }
+  
+  .nav {
+    font-size: 24px;
+  }
+  
+  .offer {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px repeat(3, auto);
+    gap: 40px;
+    padding: 40px 20px;
+  }
+  
+  .offer p {
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 80px;
+    text-align: center;
+  }
+  
+  .drinks {
+    grid-row: 2;
+    grid-column: 1;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  .bakery {
+    grid-row: 3;
+    grid-column: 1;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  .merchandise {
+    grid-row: 4;
+    grid-column: 1;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  .aboutUsHomepage {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 40px 20px;
+  }
+  
+  .image {
+    grid-column: 1;
+    grid-row: 1;
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 40px;
+  }
+  
+  .image img {
+    width: 100%;
+    max-width: 550px;
+  }
+  
+  .aboutUsinfo {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0 40px 40px;
+    gap: 40px;
+  }
+  
+  .aboutUsinfo h2 {
+    font-size: 80px;
+    text-align: center;
+  }
+  
+  .buynow {
+    height: auto;
+    padding: 40px 20px;
+    grid-template-rows: auto auto auto;
+    gap: 40px;
+  }
+  
+  .model {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .logo {
+    font-size: 35px;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  
+  .nav {
+    font-size: 20px;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .nav a {
+    font-size: 18px;
+  }
+  
+  .offer p {
+    font-size: 60px;
+  }
+  
+  .card {
+    width: 280px;
+    height: 350px;
+  }
+  
+  .card img {
+    width: 240px;
+    height: 240px;
+  }
+  
+  button {
+    width: 280px;
+    font-size: 18px;
+  }
+  
+  .aboutUsinfo h2 {
+    font-size: 60px;
+  }
+  
+  .aboutUsinfo p {
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .aboutUsinfo .btn {
+    justify-items: center;
+  }
+  
+  .btn button {
+    width: 200px;
+  }
+  
+  .buynow {
+    height: auto;
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 30px;
+  }
+  
+  .nav {
+    font-size: 16px;
+  }
+  
+  .nav a {
+    font-size: 16px;
+  }
+  
+  .offer p {
+    font-size: 50px;
+  }
+  
+  .card {
+    width: 250px;
+    height: 320px;
+  }
+  
+  .card img {
+    width: 210px;
+    height: 210px;
+  }
+  
+  .card h5 {
+    font-size: 18px;
+  }
+  
+  button {
+    width: 250px;
+    font-size: 16px;
+    height: 45px;
+  }
+  
+  .aboutUsinfo {
+    padding: 0 20px 40px;
+  }
+  
+  .aboutUsinfo h2 {
+    font-size: 50px;
+  }
+  
+  .aboutUsinfo p {
+    font-size: 16px;
+  }
+  
+  .btn button {
+    width: 180px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .header {
+    height: 70px;
+  }
+  
+
+  @media (max-width: 400px) {
+    .nav {
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    
+    .nav li {
+      margin: 0 5px;
+    }
+  }
+}
+
+.cover img,
+.msg img,
+.model img {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: contain;
+}
+
+button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
 
