@@ -96,35 +96,45 @@
 
 <body class="min-h-screen flex flex-col justify-between font-poppins bg-[#FFFBF4]">
   <!-- Header -->
-  <div id="main-header-nav-bar" class="relative h-45 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover">
-    <section class="h-1/2 flex ustify-between items-center px-4 flex-row justify-between gap-20 mt-3">
-        <div id="logo-side" class="w-2/6 flex justify-center items-center">
-            <div class="text-6xl h-full font-modak flex items-end text-[#A6171B]">
-                YUMMY
-            </div>
+<section class="relative z-10 h-45 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+      <!-- Logo -->
+      <div class="w-full lg:w-auto flex justify-center lg:justify-start">
+        <div class="text-4xl md:text-5xl lg:text-6xl font-modak text-[#A6171B]">
+          YUMMY
         </div>
-        <div id="nav-side" class="flex flex-row justify-center align-middle w-4/6 gap-10">
-            <div id="nav-bar" class="flex flex-row justify-center font-modak text-3xl gap-10">
-                <div class="flex items-center text-white m-2 text-stroke cursor-pointer">
-                    <a href="../Dyna/Home/Home.html">Home</a>
-                </div>
-                <div class="flex items-center text-white m-2 text-stroke cursor-pointer">
-                    <a href="../Extra_part/Menu.html">Menu</a>
-                </div>
-                <div class="flex items-center text-white m-2 text-stroke cursor-pointer">
-                    <a href="Merchandise.html">Merchandise</a>
-                </div>
-                <div class="flex items-center text-white m-2 text-stroke cursor-pointer">
-                    <a href="../Dyna/Aboutus/AboutUs.html">About Us</a>
-                </div>
-            </div>
-            <div id="shopping-items-counter" class="bg-[#A6171B] flex flex-row justify-center text-2xl items-center gap-2 w-17 h-12 rounded-2xl text-white font-semibold cursor-pointer">
-              0 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
-                </svg>
-            </div>
-        </div>    
-    </section>
+      </div>
+      
+      <!-- Navigation and Cart -->
+      <div class="w-full lg:w-auto flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-6">
+        <!-- Navigation -->
+        <nav class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6">
+          <a href="../Dyna/Home/Home.html" class="text-white font-modak text-xl sm:text-2xl lg:text-3xl text-stroke hover:scale-105 transition-transform">
+            Home
+          </a>
+          <a href="../Extra_part/Menu.html" class="text-white font-modak text-xl sm:text-2xl lg:text-3xl text-stroke hover:scale-105 transition-transform">
+            Menu
+          </a>
+          <a href="Merchandise.html" class="text-white font-modak text-xl sm:text-2xl lg:text-3xl text-stroke hover:scale-105 transition-transform">
+            Merchandise
+          </a>
+          <a href="../Dyna/Aboutus/AboutUs.html" class="text-white font-modak text-xl sm:text-2xl lg:text-3xl text-stroke hover:scale-105 transition-transform">
+            About Us
+          </a>
+        </nav>
+        
+        <!-- Cart Icon -->
+        <div id="shopping-items-counter" class="bg-[#A6171B] flex items-center justify-center gap-2 px-4 py-2 rounded-2xl text-white font-semibold text-lg sm:text-xl cursor-pointer hover:bg-[#8a1316] transition-colors">
+          0 
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   </div>
 
   <!-- Hero Section -->
@@ -306,12 +316,10 @@
 </html>
 
 <script>
-// Simple cart counter for merchandise page
 document.addEventListener('DOMContentLoaded', function() {
-    // Get cart from localStorage or create empty array
     const cart = JSON.parse(localStorage.getItem('yummyCart')) || [];
     
-    // Update cart counter
+    // Update cart
     const cartCounter = document.getElementById('shopping-items-counter');
     if (cartCounter) {
         const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
@@ -322,14 +330,14 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
         `;
     }
-    
-    // Make cart icon clickable to show simple cart view
+
+    // cart icon listen for click
     cartCounter.addEventListener('click', function() {
-        showSimpleCart(cart);
+        showcart(cart);
     });
 });
-function getProductIcon(productName) {
-    // Map product names to image filenames
+function prodimg(productName) {
+    //helper function for imgae
     const imageMap = {
         'Espresso T-Shirt': 'espressotee.png',
         'Mocha T-Shirt': 'matchatee.png',
@@ -344,7 +352,7 @@ function getProductIcon(productName) {
 }
 
 // Show simple cart view
-function showSimpleCart(cart) {
+function showcart(cart) {
     // Create cart overlay
     const cartOverlay = document.createElement('div');
     cartOverlay.style.cssText = `
@@ -360,8 +368,8 @@ function showSimpleCart(cart) {
     `;
     
     // Create cart sidebar
-    const cartSidebar = document.createElement('div');
-    cartSidebar.style.cssText = `
+    const sbar = document.createElement('div');
+    sbar.style.cssText = `
         background: white;
         width: 350px;
         height: 100%;
@@ -371,7 +379,7 @@ function showSimpleCart(cart) {
     `;
     
     // Cart content
-    let cartHTML = `
+    let cartcards = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <h2 style="font-size: 24px; font-weight: bold; color: #A6171B;">Your Cart</h2>
             <button id="closeCart" style="background: none; border: none; font-size: 24px; cursor: pointer;">×</button>
@@ -379,25 +387,25 @@ function showSimpleCart(cart) {
     `;
     
     if (cart.length === 0) {
-        cartHTML += `
+        cartcards += `
             <div style="text-align: center; padding: 40px 0;">
                 <div style="font-size: 60px; color: #ccc; margin-bottom: 10px;">🛒</div>
                 <p style="color: #666;">Your cart is empty</p>
             </div>
         `;
     } else {
-        cartHTML += `<div style="margin-bottom: 20px;">`;
+        cartcards += `<div style="margin-bottom: 20px;">`;
         
         let total = 0;
         cart.forEach(item => {
             const itemTotal = item.price * item.quantity;
             total += itemTotal;
             
-            cartHTML += `
+            cartcards += `
                 <div style="display: flex; padding: 10px 0; border-bottom: 1px solid #eee;">
                     <div style="width: 60px; height: 60px; background: #f5f5f5; border-radius: 8px; margin-right: 10px; 
                          display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                        ${getProductIcon(item.name)}
+                        ${prodimg(item.name)}
                     </div>
                     <div style="flex: 1;">
                         <div style="font-weight: bold;">${item.name}</div>
@@ -411,7 +419,7 @@ function showSimpleCart(cart) {
             `;
         });
         
-        cartHTML += `
+        cartcards += `
             </div>
             <div style="border-top: 2px solid #A6171B; padding-top: 15px;">
                 <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: bold;">
@@ -422,11 +430,11 @@ function showSimpleCart(cart) {
         `;
     }
     
-    cartSidebar.innerHTML = cartHTML;
-    cartOverlay.appendChild(cartSidebar);
+    sbar.innerHTML = cartcards;
+    cartOverlay.appendChild(sbar);
     document.body.appendChild(cartOverlay);
     
-    // Close button functionality
+    // Close button
     document.getElementById('closeCart').addEventListener('click', function() {
         document.body.removeChild(cartOverlay);
     });
