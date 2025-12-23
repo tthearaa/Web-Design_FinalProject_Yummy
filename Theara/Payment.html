@@ -29,36 +29,45 @@
 </head>
 
 <body class="min-h-screen flex flex-col justify-between font-poppins">
-  <div id="main-header-nav-bar" class="relative h-45 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover">
-    <section class="h-1/2 flex justify-between items-center px-4 flex-row justify-between gap-20 mt-3">
-        <div id="logo-side" class="w-2/6 flex justify-center items-center">
-            <div class="text-6xl h-full font-modak flex items-end text-[#A6171B]">
-                YUMMY
-            </div>
+  <section class="relative z-10 h-45 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+      <!-- Logo -->
+      <div class="w-full lg:w-auto flex justify-center lg:justify-start">
+        <div class="text-4xl md:text-5xl lg:text-6xl font-modak text-[#A6171B]">
+          YUMMY
         </div>
-        <div id="nav-side" class="flex flex-row justify-center align-middle w-4/6 gap-10 [-webkit-text-stroke:2px_#A6171B]">
-            <div id="nav-bar" class="flex flex-row justify-center font-modak text-3xl gap-10">
-                <div class="flex items-center text-white m-2">
-                    <a href="../Dyna/Home/Home.html">Home</a>
-                </div>
-                <div class="flex items-center text-white m-2">
-                    <a href="../Extra_part/Menu.html">Menu</a>
-                </div>
-                <div class="flex items-center text-white m-2">
-                    <a href="Merchandise.html">Merchandise</a>
-                </div>
-                <div class="flex items-center text-white m-2">
-                    <a href="../Dyna/Aboutus/AboutUs.html">About Us</a>
-                </div>
-            </div>
-            <div id="shopping-items-counter" class="bg-[#A6171B] flex flex-row justify-center text-2xl items-center gap-2 w-17 h-12 rounded-2xl text-white font-semibold">
-              0 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
-                </svg>
-            </div>
-        </div>    
-    </section>
+      </div>
+      
+      <!-- Navigation and Cart -->
+      <div class="w-full lg:w-auto flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-6">
+        <!-- Navigation -->
+        <nav class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6">
+          <a href="../Dyna/Home/Home.html" class="text-white font-modak text-xl sm:text-2xl lg:text-3xl text-stroke hover:scale-105 transition-transform">
+            Home
+          </a>
+          <a href="../Extra_part/Menu.html" class="text-white font-modak text-xl sm:text-2xl lg:text-3xl text-stroke hover:scale-105 transition-transform">
+            Menu
+          </a>
+          <a href="Merchandise.html" class="text-white font-modak text-xl sm:text-2xl lg:text-3xl text-stroke hover:scale-105 transition-transform">
+            Merchandise
+          </a>
+          <a href="../Dyna/Aboutus/AboutUs.html" class="text-white font-modak text-xl sm:text-2xl lg:text-3xl text-stroke hover:scale-105 transition-transform">
+            About Us
+          </a>
+        </nav>
+        
+        <!-- Cart Icon -->
+        <div id="shopping-items-counter" class="bg-[#A6171B] flex items-center justify-center gap-2 px-4 py-2 rounded-2xl text-white font-semibold text-lg sm:text-xl cursor-pointer hover:bg-[#8a1316] transition-colors">
+          0 
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
   <main class="grow container mx-auto px-4 py-8">
     <div class="max-w-4xl mx-auto">
