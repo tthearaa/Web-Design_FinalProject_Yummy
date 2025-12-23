@@ -18,7 +18,7 @@ function login() {
     }
 }
 
-// Show password
+//password masking
 const password = document.getElementById("loginPassword");
 const showBtn = document.getElementById("showBtn");
 
@@ -29,13 +29,5 @@ showBtn.addEventListener("click", () => {
     } else {
         password.type = "password";
         showBtn.textContent = "Show";
-    }
-});
-
-// Enter key support
-document.getElementById("loginPassword").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        login();
     }
 });
