@@ -48,44 +48,48 @@
 </head>
 
 <body class="min-h-screen flex flex-col justify-between font-poppins">
-  <div id="main-header-nav-bar" class="h-45 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover transition-transform duration-300">
-    <section class="h-1/2 flex ustify-between items-center px-4 flex-row justify-between gap-20 mt-3">
-        <div id="logo-side" class="w-2/6 flex justify-center items-center">
-            <div class="text-6xl h-full font-modak flex items-end text-[#A6171B]">
+  <div id="main-header-nav-bar" class="h-20 md:h-45 sm:h-30 w-full bg-[url('header-shape.png')] bg-repeat-x bg-bottom bg-cover transition-transform duration-300">
+    <section class="h-auto sm:h-1/2 flex items-center px-3 sm:px-4 flex-row justify-between gap-4 sm:gap-6 md:gap-10 lg:gap-20 mt-2 sm:mt-3 md:mt-4 lg:mt-5">
+        <div id="logo-side" class="w-1/4 sm:w-2/6 flex justify-center items-center">
+            <div class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl h-full font-modak flex items-end text-[#A6171B]">
                 YUMMY
             </div>
         </div>
-        <div id="nav-side" class="flex flex-row justify-center align-middle w-4/6 gap-10 [-webkit-text-stroke:2px_#A6171B]">
-            <div id="nav-bar" class=" flex flex-row justify-center font-modak text-3xl gap-10">
-                <div class="flex items-center text-white m-2 ">
-                    Home
+        
+        <div id="nav-side" class="w-3/4 sm:w-4/6 flex flex-row justify-center align-middle gap-1 sm:gap-2 md:gap-4 lg:gap-10 [-webkit-text-stroke:1px_#A6171B] sm:[-webkit-text-stroke:1.5px_#A6171B] lg:[-webkit-text-stroke:2px_#A6171B]">
+            <div id="nav-bar" class="text-lg sm:text-xl md:text-2xl lg:text-3xl flex flex-row justify-center font-modak gap-1 sm:gap-2 md:gap-4 lg:gap-10">
+                <div class="flex items-center text-white m-1 sm:m-2">
+                    <a href="#" class="hover:text-gray-200 transition-colors">Home</a>
                 </div>
-                <div class="flex items-center text-white m-2 ">
-                    <a href="Menu.html">Menu</a>
+                <div class="flex items-center text-white m-1 sm:m-2">
+                    <a href="Menu.html" class="hover:text-gray-200 transition-colors [-webkit-text-stroke:1px_#A6171B] sm:[-webkit-text-stroke:1.5px_#A6171B] lg:[-webkit-text-stroke:2px_#A6171B]">Menu</a>
                 </div>
-                <div class="flex items-center text-white m-2 ">
-                    <a href="/Web-Design_FinalProject_Yummy/Theara/Merchandise.html">Merchandise</a>
+                <div class="flex items-center text-white m-1 sm:m-2">
+                    <a href="/Web-Design_FinalProject_Yummy/Theara/Merchandise.html" class="hover:text-gray-200 transition-colors">Merchandise</a>
                 </div>
-                <div class="flex items-center text-white m-2 ">
-                    <a href="/Web-Design_FinalProject_Yummy/Dyna/Aboutus/AboutUs.html">About Us</a>
+                <div class="flex items-center text-white m-1 sm:m-2">
+                    <a href="/Web-Design_FinalProject_Yummy/Dyna/Aboutus/AboutUs.html" class="hover:text-gray-200 transition-colors">About Us</a>
                 </div>
             </div>
-            <div id="shopping-items-counter" class="bg-[#A6171B] flex flex-row justify-center text-2xl items-center gap-2 w-17 h-12 rounded-2xl text-white font-semibold cursor-pointer hover:bg-[#8a1417] transition-colors">
-              <span id="cart-count">0</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
-                </svg>
+            <div id="shopping-items-counter" class="bg-[#A6171B] flex flex-row justify-center items-center gap-1 sm:gap-2 px-2 sm:px-3 lg:px-4 lg:w-17 w-10 sm:w-12 md:w-14 h-8 sm:h-10 md:h-11 lg:h-12 rounded-lg sm:rounded-xl lg:rounded-2xl text-white font-semibold cursor-pointer hover:bg-[#8a1417] transition-colors">
+              <span id="cart-count" class="text-sm sm:text-base md:text-lg lg:text-xl">0</span>
+              <svg xmlns="http://www.w3.org/2000/svg" 
+                   class="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" 
+                   fill="currentColor" 
+                   viewBox="0 0 16 16">
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+              </svg>
             </div>
         </div>    
     </section>
   </div>
 
-  <section id="menu-body" class=" flex flex-col h-[85%] mr-[50px] ml-[50px]">
-    <div id="menu-option-container" class=" p-5 flex flex-row justify-between items-center">
-      <div id="name" class=" text-8xl font-modak text-[#A6171B] w-1/3 flex justify-center items-center">
+  <section id="menu-body" class="flex flex-col h-[85%] mr-[50px] ml-[50px]">
+    <div id="menu-option-container" class="p-5 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
+      <div id="name" class="font-modak text-[#A6171B] text-5xl sm:text-6xl lg:text-8xl w-full lg:w-1/3 flex justify-center items-center">
         Menu
       </div>
-      <div id="option-container" class="font-poppins bg-[#D9D9D9] flex flex-row justify-between items-center w-2/3 h-1/2 rounded-full text-white font-semibold">
+      <div id="option-container" class="font-poppins bg-[#D9D9D9] flex flex-wrap lg:flex-nowrap justify-center items-center w-full lg:w-2/3 lg:p-0 lg:gap-2 rounded-full text-white font-semibold gap-3 p-2">
         <button class="flex-1 text-center px-2 h-[50px] flex items-center justify-center cursor-pointer hover:bg-[#A6171B] hover:rounded-full"><a href="Menu.html">Popular</a></button>
         <button class="flex-1 text-center px-2 h-[50px] flex items-center justify-center cursor-pointer hover:bg-[#A6171B] hover:rounded-full"><a href="Hot_Menu.html">Hot</a></button>
         <button class="flex-1 text-center px-2 h-[50px] flex items-center justify-center cursor-pointer bg-[#A6171B] rounded-full"><a href="Ice_Menu.html">Ice</a></button>
@@ -96,7 +100,7 @@
       </div>
     </div>
    
-    <div id="items" class="grid grid-cols-4 gap-4 mb-5">
+    <div id="items" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5 md:grid-cols-3 lg:grid-cols-4">
 
       <div class="items-container flex flex-col bg-[#A6171B] rounded-2xl overflow-hidden">
         <section class="flex-1">
@@ -400,7 +404,7 @@
     <div class="border-t p-4 bg-gray-50">
       <div class="flex justify-between items-center mb-4">
         <span class="font-bold text-lg">Total:</span>
-        <span id="sidebar-cart-total" class="font-bold text-xl text-[#A6171B]">$0.00</span>
+        <span id="cart-total" class="font-bold text-xl text-[#A6171B]">$0.00</span>
       </div>
       <button id="checkout-btn" class="w-full bg-[#A6171B] text-white py-3 rounded-lg font-bold hover:bg-[#8a1417] transition-colors">
         Proceed to Checkout
@@ -410,28 +414,30 @@
 
 
   <!-- Footer -->
-  <section id="footer" class="bg-[#A6171B] flex w-full p-4 justify-between">
-    <div class="text-white text-6xl w-2/6 font-modak flex items-center justify-center">
-      YUMMY
-    </div>
+  <section id="footer" class="bg-[#A6171B] w-full py-4 min-w-[100vw] px-0">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-between gap-4">
+      <div class="text-white font-modak text-2xl sm:text-3xl md:text-4xl lg:text-5xl flex items-center justify-center">
+        YUMMY
+      </div>
 
-    <div class="w-3/6 flex text-white gap-15 item-center justify-end">
-      <div class="flex flex-col">
-        <span>HOME</span>
-        <span>ABOUT US</span>
+      <div class="flex flex-col sm:flex-row text-white gap-6 sm:gap-12 items-center">
+        <div class="flex flex-col items-center sm:items-start text-sm sm:text-base">
+          <span>HOME</span>
+          <span>ABOUT US</span>
+        </div>
+        <div class="flex flex-col items-center sm:items-start text-sm sm:text-base">
+          <span>NEWS</span>
+          <span>STORE</span>
+        </div>
+        <div class="flex flex-col items-center sm:items-start text-sm sm:text-base">
+          <span>CONTACT</span>
+          <span><a href="Menu.html" class="underline">MENU</a></span>
+        </div>
       </div>
-      <div class="flex flex-col">
-        <span>NEWS</span>
-        <span>STORE</span>
-      </div>
-      <div class="flex flex-col">
-        <span>CONTACT</span>
-        <span><a href="Menu.html">MENU</a></span>
-      </div>
-    </div>
 
-    <div class="w-2/6 flex justify-end items-end text-white">
-      ©2025 YUMMY
+      <div class="text-white text-sm sm:text-base flex items-center justify-center">
+        ©2025 YUMMY
+      </div>
     </div>
   </section>
 
@@ -448,7 +454,7 @@
   const cartSidebar = document.getElementById("cart-sidebar");
   const closeSidebar = document.getElementById("close-sidebar");
   const cartItemsContainer = document.getElementById("cart-items");
-  const cartTotalElementSidebar = document.getElementById("sidebar-cart-total");
+  const cartTotalElementSidebar = document.getElementById("cart-total");
 
   // Customization Modal Elements
   const customizationModal = document.getElementById("customization-modal");
